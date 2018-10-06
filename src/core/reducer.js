@@ -1,7 +1,8 @@
-import { GET_SOLAR_ENERGETIC_PARTICLES } from "./actions"
+import {GET_ALL_EARTHQUAKES, GET_SOLAR_ENERGETIC_PARTICLES} from "./actions"
 
 let initialState = {
     sep: [],
+    quakes: null,
 }
 
 export default (state = initialState, action) => {
@@ -13,6 +14,8 @@ export default (state = initialState, action) => {
             } else {
                 return state
             }
+        case GET_ALL_EARTHQUAKES:
+            return { ...state, quakes: action.quakes }
         default:
             return state
     }
