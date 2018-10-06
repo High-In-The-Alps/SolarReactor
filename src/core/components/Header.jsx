@@ -1,23 +1,70 @@
-import React, {Fragment, PureComponent} from 'react';
+import React from 'react';
+import "./coreStyles.css"
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem } from 'reactstrap';
 
-class Header extends PureComponent {
+class Header extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = {
-            open: false
-        }
-    }
+        super(props);
 
-    handleClick = e => {
-        this.setState({ open: !this.state.open})
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false
+        };
+    }
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
     }
 
     render() {
-        const { open } = this.state
         return (
-            <Fragment>
-                {open ? <div>Menu</div> : <a onClick={this.handleClick}>Open Menu</a>}
-            </Fragment>
+            <header>
+                <div className={"headerWrapper"}>
+                    <Navbar color="light" light expand="md">
+                        <NavbarBrand href="/">solarreactor</NavbarBrand>
+                        <NavbarToggler onClick={this.toggle} />
+                        <Collapse isOpen={this.state.isOpen} navbar>
+                            <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <NavLink href="/#/about">About</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="https://github.com/High-In-The-Alps/solarreactor">GitHub</NavLink>
+                                </NavItem>
+                                {/*<UncontrolledDropdown nav inNavbar>*/}
+                                    {/*<DropdownToggle nav caret>*/}
+                                        {/*Options*/}
+                                    {/*</DropdownToggle>*/}
+                                    {/*<DropdownMenu right>*/}
+                                        {/*<DropdownItem>*/}
+                                            {/*Option 1*/}
+                                        {/*</DropdownItem>*/}
+                                        {/*<DropdownItem>*/}
+                                            {/*Option 2*/}
+                                        {/*</DropdownItem>*/}
+                                        {/*<DropdownItem divider />*/}
+                                        {/*<DropdownItem>*/}
+                                            {/*Reset*/}
+                                        {/*</DropdownItem>*/}
+                                    {/*</DropdownMenu>*/}
+                                {/*</UncontrolledDropdown>*/}
+                            </Nav>
+                        </Collapse>
+                    </Navbar>
+                </div>
+            </header>
         )
     }
 }

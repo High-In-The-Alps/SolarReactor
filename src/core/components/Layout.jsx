@@ -1,9 +1,12 @@
 import React from 'react';
 import { Container } from "reactstrap";
+import "./coreStyles.css"
 
 const Layout = ({ children }) => (
     <Container>
-        {children}
+        <div className="layoutWrapper">
+            {children}
+        </div>
     </Container>
 )
 

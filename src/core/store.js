@@ -5,9 +5,7 @@ import thunkMiddleware from "redux-thunk"
 import createHistory from "history/createHashHistory"
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 
-const history = createHistory({
-    hashType: "noslash",
-})
+const history = createHistory()
 
 const rootReducer = combineReducers({
     core: commonReducer,
