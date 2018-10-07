@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 import "./coreStyles.css"
 import {
     Collapse,
@@ -11,21 +11,22 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    DropdownItem,
+} from "reactstrap"
 
 class Header extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.toggle = this.toggle.bind(this);
+        this.toggle = this.toggle.bind(this)
         this.state = {
-            isOpen: false
-        };
+            isOpen: false,
+        }
     }
     toggle() {
         this.setState({
-            isOpen: !this.state.isOpen
-        });
+            isOpen: !this.state.isOpen,
+        })
     }
 
     render() {
@@ -44,21 +45,21 @@ class Header extends React.Component {
                                     <NavLink href="https://github.com/High-In-The-Alps/solarreactor">GitHub</NavLink>
                                 </NavItem>
                                 {/*<UncontrolledDropdown nav inNavbar>*/}
-                                    {/*<DropdownToggle nav caret>*/}
-                                        {/*Options*/}
-                                    {/*</DropdownToggle>*/}
-                                    {/*<DropdownMenu right>*/}
-                                        {/*<DropdownItem>*/}
-                                            {/*Option 1*/}
-                                        {/*</DropdownItem>*/}
-                                        {/*<DropdownItem>*/}
-                                            {/*Option 2*/}
-                                        {/*</DropdownItem>*/}
-                                        {/*<DropdownItem divider />*/}
-                                        {/*<DropdownItem>*/}
-                                            {/*Reset*/}
-                                        {/*</DropdownItem>*/}
-                                    {/*</DropdownMenu>*/}
+                                {/*<DropdownToggle nav caret>*/}
+                                {/*Options*/}
+                                {/*</DropdownToggle>*/}
+                                {/*<DropdownMenu right>*/}
+                                {/*<DropdownItem>*/}
+                                {/*Option 1*/}
+                                {/*</DropdownItem>*/}
+                                {/*<DropdownItem>*/}
+                                {/*Option 2*/}
+                                {/*</DropdownItem>*/}
+                                {/*<DropdownItem divider />*/}
+                                {/*<DropdownItem>*/}
+                                {/*Reset*/}
+                                {/*</DropdownItem>*/}
+                                {/*</DropdownMenu>*/}
                                 {/*</UncontrolledDropdown>*/}
                             </Nav>
                         </Collapse>
